@@ -7,6 +7,7 @@ import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String selectedMP3;
     static final String MP3_PATH =  "/sdcard/musicc/";
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listViewMP3.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listViewMP3.setAdapter(adapter);
         listViewMP3.setItemChecked(0, true);
+        Log.d(TAG,"onCreate");
 
         listViewMP3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
